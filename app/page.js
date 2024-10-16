@@ -1,113 +1,403 @@
 import Image from "next/image";
+import {
+  DesktopSidebar,
+  MobileSidebar,
+} from "@/components/Sidebar/Sidebar.jsx";
+import World from "@/public/world.svg";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
+// import { motion } from "framer-motion";
+import * as motion from "framer-motion/client";
+import Faq from "@/components/FAQ/Faq";
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className="w-full h-full justify-between  flex   sm:flex-col  bg-gray-100">
+      <div className="lg:hidden items-center flex justify-center flex-col ">
+        <MobileSidebar />
+        <div className="flex flex-col p-3 gap-4  ">
+          <div>
+            <Image src={World} alt="world" className="w-full h-96 mt-4" />
+          </div>
+          <div>
+            <h1 className="sm:text-4xl md:text-6xl   md:font-bold text-center md:leading-relaxed">
+              Latest{" "}
+              <span className="bg-blue-400 px-2 rounded-lg"> trends</span>{" "}
+              happening in your{" "}
+              <span className="bg-red-400 px-2 rounded-lg">Country</span>
+            </h1>
+          </div>
+
+          <div className="bg-blue-100 p-8 rounded-xl mt-24">
+            <Table>
+              <TableCaption>Last Updated 1 minute ago</TableCaption>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="w-[100px]">Rank</TableHead>
+                  <TableHead>Trends/Hashtag</TableHead>
+                  <TableHead>Tweet Counts</TableHead>
+                  <TableHead className="text-right">Action</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="font-medium">1</TableCell>
+                  <TableCell>#BiggBoss18</TableCell>
+                  <TableCell>150000</TableCell>
+                  <TableCell className="text-right">Copy</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">2</TableCell>
+                  <TableCell>#Suriya45</TableCell>
+                  <TableCell>140000</TableCell>
+                  <TableCell className="text-right">Copy</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">3</TableCell>
+                  <TableCell>Canada</TableCell>
+                  <TableCell>15000</TableCell>
+                  <TableCell className="text-right">Copy</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </div>
+
+          <div className="trending-hashtags-section mt-10 p-8">
+              <h1 className="text-4xl font-bold ">
+                Latest Trending Hashtags and Topics in WorldWide
+              </h1>
+              <p className="mt-5 leading-relaxed text-lg ">
+                This page automatically pulls the latest trending hashtags and
+                topics in WorldWide every 30 minutes from Twitter using the
+                official Twitter API, so you can see the latest trending
+                hashtags or topics that are trending right now on Twitter.
+                People are using hashtags on Instagram, YouTube, and Facebook to
+                show how they feel about Worldwide today. You may also wish to
+                bookmark this page to receive updates regarding the latest
+                Twitter trends in Worldwide.
+              </p>
+              <p className="mt-5 leading-relaxed text-lg ">
+                Twitter is one of the most popular social media platforms in the
+                world, with millions of daily active users. It is a great
+                platform to stay updated on current events, connect with people
+                who share your interests, and express yourself. Twitter’s trends
+                are one of the most interesting things about it.
+              </p>
+
+              <h2 className="text-blue-400 text-2xl font-bold mt-5 ">
+                Overview
+              </h2>
+              <p className="mt-5 leading-relaxed text-lg ">
+                Twitter trends are hashtags that are being tweeted about more
+                than any other hashtag at a given time. It is possible to find
+                trends everywhere in the world, including in WorldWide. They can
+                be about news events, sports, entertainment, or anything else
+                people want to talk about.
+              </p>
+              <p className="mt-5 leading-relaxed text-lg ">
+                Hashtags, which are shown by the “#” symbol, group tweets based
+                on specific topics or words. They help users connect with
+                conversations about their interests.
+              </p>
+              <p className="mt-5 leading-relaxed text-lg ">
+                Twitter popularity is found by how many times a hashtag is
+                tweeted, how many people are using it, and how much people are
+                interested in it. Tweets that are retweeted, liked, and replied
+                to are more likely to trend.
+              </p>
+              <p className="mt-5 leading-relaxed text-lg ">
+                Twitter also uses an algorithm to find and promote topics that
+                are trending. This algorithm looks at a number of things, such
+                as how popular the topic is, how relevant it is to Twitter
+                users, and how good the tweets are about the topic.
+              </p>
+
+              <h2 className="text-blue-400 text-2xl font-bold mt-5 ">
+                Features of Trends Hashtags
+              </h2>
+              <p className="mt-5 leading-relaxed text-lg ">
+                Trending hashtags are hashtags that are currently being used a
+                lot on social media. They can be about anything, such as current
+                events, holidays, pop culture, and more.
+              </p>
+              <p className="mt-5 leading-relaxed text-lg ">
+                Here are some of the features of trending hashtags:
+              </p>
+              <ul className="list-disc ml-6 space-y-2 text-lg">
+                <li>
+                  <strong>They are popular:</strong> People use popular hashtags
+                  on social media. If you use a trending hashtag in your post,
+                  other people are more likely to see it.
+                </li>
+                <li>
+                  <strong>They are relevant:</strong> Current events or popular
+                  topics are often relevant to trending hashtags. This means
+                  that people who are interested in those topics will search for
+                  hashtags that are popular.
+                </li>
+                <li>
+                  <strong>Frequent updates:</strong> Trending hashtags can
+                  change quickly, depending on what is happening in the
+                  Worldwide. This means you need to know what hashtags are
+                  popular, so you can use them in your posts.
+                </li>
+              </ul>
+
+              <h2 className="text-blue-400 text-2xl font-bold mt-5 ">
+                How to Use Twitter Trends
+              </h2>
+              <p className="mt-5 leading-relaxed text-lg  ">
+                There are a number of ways to use Twitter trends. Here are a few
+                tips:
+              </p>
+              <ul className=" ml-6 space-y-2 text-lg">
+                <li>
+                  💠 <strong>Follow Trending Hashtags in Worldwide:</strong>{" "}
+                  This is a great way to stay up-to-date on current events and
+                  discover new topics that you might be interested in. Follow
+                  hashtags to find out what people are talking about and join in
+                  the conversation.
+                </li>
+                <li>
+                  💠 <strong>Tweet About Trending Topics:</strong> If you have
+                  something interesting to say about a trending topic, tweet
+                  about it! This is a good way to meet people who care about the
+                  same thing and share your thoughts and ideas. You can also use
+                  trending hashtags in your tweets to increase their visibility.
+                </li>
+                <li>
+                  💠{" "}
+                  <strong>
+                    Use Trending Hashtags in Your Marketing Campaigns:
+                  </strong>{" "}
+                  If you are a business, you can use trending hashtags to
+                  promote your products and services to a wider audience. By
+                  incorporating popular hashtags into your marketing campaigns,
+                  you can reach more people and increase your brand awareness.
+                </li>
+                <li>
+                  💠{" "}
+                  <strong>Monitor Twitter Trends for Customer Service:</strong>{" "}
+                  If you are a business, you can monitor Twitter trends to see
+                  if people are talking about your company or products. If you
+                  see any negative feedback, you can address it promptly. By
+                  engaging with your customers on Twitter, you can improve your
+                  customer service and build stronger relationships with them.
+                </li>
+              </ul>
+
+              <br />
+              <br />
+
+              <div className="mb-20">
+                <Faq />
+              </div>
+            </div>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="hidden lg:flex  ">
+        <div className="w-[30%] h-screen fixed top-0 left-0">
+          <DesktopSidebar />
+        </div>
+
+        <div className="flex flex-col p-3 gap-4  ">
+          <div className="flex flex-col p-3 gap-4 w-[70%] ml-[20%]  h-screen">
+            <motion.div
+              initial={{ scale: 0.9 }}
+              whileInView={{ scale: 1.1 }}
+              transition={{ ease: "easeIn", duration: 1 }}
+            >
+              <h1 className="sm:text-6xl md:text-5xl md:font-bold text-center md:leading-relaxed">
+                Latest{" "}
+                <span className="bg-blue-400 px-2 rounded-lg">trends</span>{" "}
+                happening in your{" "}
+                <span className="bg-red-400 px-2 rounded-lg">Country</span>
+              </h1>
+            </motion.div>
+            <motion.div
+              initial={{ scale: 1.3 }}
+              whileInView={{ scale: 1 }}
+              transition={{ ease: "easeIn", duration: 1.5 }}
+            >
+              <Image src={World} alt="world" className="w-full h-72 mt-4" />
+            </motion.div>
+
+            <div className="bg-blue-100 p-8 rounded-xl mt-24">
+              <Table>
+                <TableCaption>Last Updated 1 minute ago</TableCaption>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead className="w-[100px]">Rank</TableHead>
+                    <TableHead>Trends/Hashtag</TableHead>
+                    <TableHead>Tweet Counts</TableHead>
+                    <TableHead className="text-right">Action</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  <TableRow>
+                    <TableCell className="font-medium">1</TableCell>
+                    <TableCell>#BiggBoss18</TableCell>
+                    <TableCell>150000</TableCell>
+                    <TableCell className="text-right">Copy</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">2</TableCell>
+                    <TableCell>#Suriya45</TableCell>
+                    <TableCell>140000</TableCell>
+                    <TableCell className="text-right">Copy</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className="font-medium">3</TableCell>
+                    <TableCell>Canada</TableCell>
+                    <TableCell>15000</TableCell>
+                    <TableCell className="text-right">Copy</TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </div>
+
+            <div className="trending-hashtags-section mt-10">
+              <h1 className="text-4xl font-bold ">
+                Latest Trending Hashtags and Topics in WorldWide
+              </h1>
+              <p className="mt-5 leading-relaxed text-lg ">
+                This page automatically pulls the latest trending hashtags and
+                topics in WorldWide every 30 minutes from Twitter using the
+                official Twitter API, so you can see the latest trending
+                hashtags or topics that are trending right now on Twitter.
+                People are using hashtags on Instagram, YouTube, and Facebook to
+                show how they feel about Worldwide today. You may also wish to
+                bookmark this page to receive updates regarding the latest
+                Twitter trends in Worldwide.
+              </p>
+              <p className="mt-5 leading-relaxed text-lg ">
+                Twitter is one of the most popular social media platforms in the
+                world, with millions of daily active users. It is a great
+                platform to stay updated on current events, connect with people
+                who share your interests, and express yourself. Twitter’s trends
+                are one of the most interesting things about it.
+              </p>
+
+              <h2 className="text-blue-400 text-2xl font-bold mt-5 ">
+                Overview
+              </h2>
+              <p className="mt-5 leading-relaxed text-lg ">
+                Twitter trends are hashtags that are being tweeted about more
+                than any other hashtag at a given time. It is possible to find
+                trends everywhere in the world, including in WorldWide. They can
+                be about news events, sports, entertainment, or anything else
+                people want to talk about.
+              </p>
+              <p className="mt-5 leading-relaxed text-lg ">
+                Hashtags, which are shown by the “#” symbol, group tweets based
+                on specific topics or words. They help users connect with
+                conversations about their interests.
+              </p>
+              <p className="mt-5 leading-relaxed text-lg ">
+                Twitter popularity is found by how many times a hashtag is
+                tweeted, how many people are using it, and how much people are
+                interested in it. Tweets that are retweeted, liked, and replied
+                to are more likely to trend.
+              </p>
+              <p className="mt-5 leading-relaxed text-lg ">
+                Twitter also uses an algorithm to find and promote topics that
+                are trending. This algorithm looks at a number of things, such
+                as how popular the topic is, how relevant it is to Twitter
+                users, and how good the tweets are about the topic.
+              </p>
+
+              <h2 className="text-blue-400 text-2xl font-bold mt-5 ">
+                Features of Trends Hashtags
+              </h2>
+              <p className="mt-5 leading-relaxed text-lg ">
+                Trending hashtags are hashtags that are currently being used a
+                lot on social media. They can be about anything, such as current
+                events, holidays, pop culture, and more.
+              </p>
+              <p className="mt-5 leading-relaxed text-lg ">
+                Here are some of the features of trending hashtags:
+              </p>
+              <ul className="list-disc ml-6 space-y-2 text-lg">
+                <li>
+                  <strong>They are popular:</strong> People use popular hashtags
+                  on social media. If you use a trending hashtag in your post,
+                  other people are more likely to see it.
+                </li>
+                <li>
+                  <strong>They are relevant:</strong> Current events or popular
+                  topics are often relevant to trending hashtags. This means
+                  that people who are interested in those topics will search for
+                  hashtags that are popular.
+                </li>
+                <li>
+                  <strong>Frequent updates:</strong> Trending hashtags can
+                  change quickly, depending on what is happening in the
+                  Worldwide. This means you need to know what hashtags are
+                  popular, so you can use them in your posts.
+                </li>
+              </ul>
+
+              <h2 className="text-blue-400 text-2xl font-bold mt-5 ">
+                How to Use Twitter Trends
+              </h2>
+              <p className="mt-5 leading-relaxed text-lg  ">
+                There are a number of ways to use Twitter trends. Here are a few
+                tips:
+              </p>
+              <ul className=" ml-6 space-y-2 text-lg">
+                <li>
+                  💠 <strong>Follow Trending Hashtags in Worldwide:</strong>{" "}
+                  This is a great way to stay up-to-date on current events and
+                  discover new topics that you might be interested in. Follow
+                  hashtags to find out what people are talking about and join in
+                  the conversation.
+                </li>
+                <li>
+                  💠 <strong>Tweet About Trending Topics:</strong> If you have
+                  something interesting to say about a trending topic, tweet
+                  about it! This is a good way to meet people who care about the
+                  same thing and share your thoughts and ideas. You can also use
+                  trending hashtags in your tweets to increase their visibility.
+                </li>
+                <li>
+                  💠{" "}
+                  <strong>
+                    Use Trending Hashtags in Your Marketing Campaigns:
+                  </strong>{" "}
+                  If you are a business, you can use trending hashtags to
+                  promote your products and services to a wider audience. By
+                  incorporating popular hashtags into your marketing campaigns,
+                  you can reach more people and increase your brand awareness.
+                </li>
+                <li>
+                  💠{" "}
+                  <strong>Monitor Twitter Trends for Customer Service:</strong>{" "}
+                  If you are a business, you can monitor Twitter trends to see
+                  if people are talking about your company or products. If you
+                  see any negative feedback, you can address it promptly. By
+                  engaging with your customers on Twitter, you can improve your
+                  customer service and build stronger relationships with them.
+                </li>
+              </ul>
+
+              <br />
+              <br />
+
+              <div className="mb-20">
+                <Faq />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
 }
