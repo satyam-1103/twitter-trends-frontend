@@ -30,7 +30,7 @@ const TableTrends = ({ selectedTrend }) => {
     if (!placeId) return; // Exit if placeId is not set
     try {
       const response = await fetch(
-        `http://localhost:5000/api/trends/${placeId}` // Replace with your actual API endpoint
+        `https://twitter-trends-backend-production.up.railway.app/api/trends/${placeId}` // Replace with your actual API endpoint
       );
       if (!response.ok) {
         throw new Error("Failed to fetch trends");
