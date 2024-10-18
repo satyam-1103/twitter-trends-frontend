@@ -36,7 +36,7 @@ const Faq = () => {
       <Accordion
         type="single"
         collapsible
-        className="h-full w-full bg-blue-100 p-4 rounded-lg "
+        className="h-full w-full bg-blue-50 shadow-lg p-4 rounded-lg "
       >
         {faqArray.map((faq, index) => (
           <AccordionItem key={index} value={`item-${index + 1}`}>
